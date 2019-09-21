@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Zetta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0321;
+}
+
+nav{
+    grid-template-columns: repeat(4, auto);
+    background-color: #11003d;
+    display: grid;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+nav div{
+    font-family: 'Lexend Zetta', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav div a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav div a:hover {
+    color: orange;
+}
+
+.logo_image {
+    height: 6vw;
+    width:13vw;
+}
+
+.active {
+    background-color: #1d0857;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    margin:1vw;
+    padding: 1vw;
+    background-color: antiquewhite;
+    margin-top: 7vw;
+}
+
+.container1 div {
+    font-family: 'Hepta Slab', serif;
+    font-size: 19px;
+    padding: 1vw;
+    line-height: 1.5;
+}
+
+.container1 div h2 {
+    text-align: center;
+}
+
+.fox_image {
+    width: auto;
+    height: 40vw;
+}
+
+.fox_container {
+    background-color: #0b0321;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin: 1vw;
+    padding: 1vw;
+    background-color: antiquewhite;
+}
+
+.container2 div {
+    font-family: 'Hepta Slab', serif;
+    font-size: 19px;
+    padding: 1vw;
+    line-height: 1.5;
+}
+
+.container2 div h2 {
+    text-align: center;
+}
+
+.planets_image {
+    width: auto;
+    height: 30vw;
+}
+
+.planets_container {
+    background-color: #0b0321;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: #11003d;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.footer div {
+    font-family: 'Lexend Zetta', sans-serif;
+    padding: 1vw;
+    margin: auto 1vw;
+    color: white;
+    font-size: 10px;
+    position: sticky;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="container1"] {
+        display: block;
+    }
+    
+    [class="footer-text"] {
+        font-size: 3 px;
+    }
+}
