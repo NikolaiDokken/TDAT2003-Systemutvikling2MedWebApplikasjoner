@@ -41,4 +41,20 @@ app.post("/person", (req, res) => {
   });
 });
 
+app.put("/person/:personId", (req, res) => {
+  console.log("Fikk PUT-request fra klienten");
+  personDao.updateOne(req.params.personId, req.body, (status, data) => {
+    res.status(status);
+    res.json(data);
+  });
+});
+
+app.delete("/person/:personId", (req, res) => {
+  console.log("Fikk PUT-request fra klienten");
+  personDao.updateOne(req.params.personId, (status, data) => {
+    res.status(status);
+    res.json(data);
+  });
+});
+
 var server = app.listen(8080);
