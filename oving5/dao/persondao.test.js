@@ -77,3 +77,31 @@ test("get all persons from db", done => {
 
   personDao.getAll(callback);
 });
+
+// Test update person
+test("update a person in the database", done => {
+  function callback(status, data) {
+    console.log(
+      "Test callback: status=" + status + ", data.length=" + data.length
+    );
+    expect(data.length).toBeGreaterThanOrEqual(2);
+    done();
+  }
+
+  personDao.updateOne(1,
+    { navn: "Nikolai Dokken", alder: 20, adresse: "Holtermanns veg 31B" },
+    callback);
+});
+
+// Test delete person
+test("delete a person in the database", done => {
+  function callback(status, data) {
+    console.log(
+      "Test callback: status=" + status + ", data.length=" + data.length
+    );
+    expect(data.length).toBeLessThan(2);
+    done();
+  }
+
+  personDao.deleteOne(1, callback);
+});

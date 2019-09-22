@@ -13,20 +13,20 @@ module.exports = class PersonDao extends Dao {
     );
   }
 
-  updateOne(id, json, callback) {
-    var val = [json.navn, json.adresse, json.alder, id];
-    super.query(
-      "UPDATE person SET navn=?, adresse=?, alder=? WHERE id=?",
-      [val],
-      callback
-    );
-  }
-
   createOne(json, callback) {
     var val = [json.navn, json.adresse, json.alder];
     super.query(
       "insert into person (navn,adresse,alder) values (?,?,?)",
       val,
+      callback
+    );
+  }
+
+  updateOne(id, json, callback) {
+    var val = [json.navn, json.adresse, json.alder, id];
+    super.query(
+      "UPDATE person SET navn=?, adresse=?, alder=? WHERE id=?",
+      [val],
       callback
     );
   }
