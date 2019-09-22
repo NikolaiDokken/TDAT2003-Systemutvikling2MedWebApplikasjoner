@@ -84,7 +84,7 @@ test("update a person in the database", done => {
     console.log(
       "Test callback: status=" + status + ", data.length=" + data.length
     );
-    expect(data.length).toBeGreaterThanOrEqual(2);
+    expect(data.affectedRows).toBeGreaterThanOrEqual(1);
     done();
   }
 
@@ -99,7 +99,7 @@ test("delete a person in the database", done => {
     console.log(
       "Test callback: status=" + status + ", data.length=" + data.length
     );
-    expect(data.length).toBeLessThan(2);
+    expect(data.affectedRows).toBeGreaterThanOrEqual(1);
     done();
   }
 

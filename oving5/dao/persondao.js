@@ -26,7 +26,7 @@ module.exports = class PersonDao extends Dao {
     var val = [json.navn, json.adresse, json.alder, id];
     super.query(
       "UPDATE person SET navn=?, adresse=?, alder=? WHERE id=?",
-      [val],
+      val,
       callback
     );
   }
