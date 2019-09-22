@@ -41,18 +41,4 @@ app.post("/person", (req, res) => {
   });
 });
 
-app.delete("/person/:personId", (req, res) => {
-  personDao.deleteOne(req.params.personId, (status, data) => {
-    res.status(status);
-    res.json(data);
-  });
-});
-
-app.put("/person/:personId", (req, res) => {
-  personDao.updateOne(req.params.personId, req.body, (status, data) => {
-    res.status(status);
-    res.json(data);
-  });
-});
-
 var server = app.listen(8080);

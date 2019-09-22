@@ -6,10 +6,10 @@ const runsqlfile = require("./runsqlfile.js");
 // GitLab CI Pool
 var pool = mysql.createPool({
   connectionLimit: 2,
-  host: "mysql.stud.iie.ntnu.no",
-  user: "nikolard",
-  password: "7CTLHdCQ",
-  database: "nikolard",
+  host: "mysql",
+  user: "root",
+  password: "secret",
+  database: "supertestdb",
   debug: false,
   multipleStatements: true
 });
@@ -99,7 +99,9 @@ test("delete a person in the database", done => {
     console.log(
       "Test callback: status=" + status + ", data.length=" + data.length
     );
-    expect(data.affectedRows).toBeGreaterThanOrEqual(1);
+    // Skal egt vært: expect(data.affectedRows).toBeGreaterThanOrEqual(1);
+    // Endrer for å få pipeline til å feile, som skal gi slack melding
+    expect(data.length).toBe(1);
     done();
   }
 
