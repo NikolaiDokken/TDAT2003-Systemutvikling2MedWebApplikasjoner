@@ -1,0 +1,17 @@
+{
+  "name": "oving7",
+  "author": "Nikolai Dokken",
+  "scripts": {
+    "start": "babel-node app.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-flow": "^7.0.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
+}
