@@ -101,7 +101,8 @@ test("delete a person in the database", done => {
     );
     // Skal egt vært: expect(data.affectedRows).toBeGreaterThanOrEqual(1);
     // Endrer for å få pipeline til å feile, som skal gi slack melding
-    expect(data.length).toBe(1);
+    // expect(data.length).toBe(1);
+    expect(data.affectedRows).toBeGreaterThanOrEqual(1);
     done();
   }
 

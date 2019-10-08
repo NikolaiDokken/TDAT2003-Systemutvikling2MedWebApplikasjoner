@@ -9,9 +9,9 @@ const PersonDao = require("./dao/persondao.js");
 var pool = mysql.createPool({
   connectionLimit: 2,
   host: "mysql.stud.iie.ntnu.no",
-  user: "nilstesd",
-  password: "lqqWcMzq",
-  database: "nilstesd",
+  user: "nikolard",
+  password: "7CTLHdCQ",
+  database: "nikolard",
   debug: false
 });
 
