@@ -31,7 +31,11 @@ console.log("v1 + 2 * v2: ", plusMultiplied(v1, v2));
 
 console.log(
   "v1 as string: ",
-  v1.reduce((print, e, i) => print + "v1[" + i + "] = " + e + ", ", "")
+  v1.reduce(
+    (print, e, i) =>
+      print + "v1[" + i + "] = " + e + (i == v1.length - 1 ? "" : ", "),
+    ""
+  )
 );
 
 // Oppgave 2
@@ -57,4 +61,47 @@ console.log(
   v.map(e => Math.sqrt(e.real ** 2 + e.imag ** 2))
 );
 
-console.log("sum of v");
+console.log(
+  "sum of v: ",
+  v.reduce(
+    () =>
+      "Complex { real: " +
+      v.reduce((m, n) => m + n.imag, 0) +
+      ", imag: " +
+      v.reduce((m, n) => m + n.real, 0) +
+      " }"
+  )
+);
+
+let students = [
+  { name: "Ola", grade: "A" },
+  { name: "Kari", grade: "C" },
+  { name: "Knut", grade: "C" }
+];
+
+console.log(
+  "students elements as strings: [" +
+    students.reduce(
+      (print, e, i) =>
+        print + e.name + " got " + e.grade + (i == v1.length - 1 ? "" : ", "),
+      ""
+    ) +
+    " ]"
+);
+
+console.log("How many got C: ", students.filter(e => e.grade == "C").length);
+
+console.log(
+  "Percentage of C grades: ",
+  students.filter(e => e.grade == "C").length / students.length
+);
+
+console.log(
+  "Did anyone get A: ",
+  students.some(e => e.grade == "A") ? "Yes" : "No"
+);
+
+console.log(
+  "Did anyone get F: ",
+  students.some(e => e.grade == "F") ? "Yes" : "No"
+);
